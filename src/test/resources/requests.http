@@ -1,0 +1,102 @@
+GET http://localhost:8080/products
+
+###
+
+POST http://localhost:8080/products/caps
+Content-Type: application/json
+
+{
+  "id": 0,
+  "name": "Red Cap",
+  "price": 500,
+  "color": "red",
+  "size": "M"
+}
+
+###
+
+POST http://localhost:8080/products/books
+Content-Type: application/json
+
+{
+  "id": 0,
+  "name": "Anna Karenina",
+  "price": 900,
+  "author": "Tolstoy"
+}
+
+###
+
+POST http://localhost:8080/products/iPhones
+Content-Type: application/json
+
+{
+  "id": 0,
+  "name": "Apple IPhone SE",
+  "price": 60000,
+  "memory": 256,
+  "color": "gold"
+
+}
+
+###
+
+POST http://localhost:8080/products/laptops
+Content-Type: application/json
+
+{
+  "id": 0,
+  "name": "Laptop ASUS",
+  "price": 50000,
+  "model": "VivoBook",
+  "processor": "intel CORE i5"
+}
+
+###
+
+GET http://localhost:8080/products/search?text=anna
+
+###
+
+GET http://localhost:8080/products/search?text=tolstoy
+
+###
+
+GET http://localhost:8080/products/search?text=VivoBook
+
+###
+
+GET http://localhost:8080/products/search?text=gold
+
+###
+
+GET http://localhost:8080/products/catalog/books
+
+###
+
+GET http://localhost:8080/products/catalog/caps
+
+###
+
+GET http://localhost:8080/products/catalog/iPhones
+
+###
+
+GET http://localhost:8080/products/catalog/laptops
+
+###
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
