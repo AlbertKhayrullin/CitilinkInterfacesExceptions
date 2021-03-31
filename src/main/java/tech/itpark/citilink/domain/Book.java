@@ -8,8 +8,8 @@ import lombok.Setter;
 public class Book extends Product {
     private String author;
 
-    public Book(long id, String name, int price, String author) {
-        super(id, name, price);
+    public Book(long id, String name, int price, boolean removed, String author) {
+        super(id, name, price, removed);
         this.author = author;
     }
 }

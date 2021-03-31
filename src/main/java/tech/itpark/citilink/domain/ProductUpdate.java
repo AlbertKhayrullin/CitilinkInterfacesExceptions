@@ -3,11 +3,10 @@ package tech.itpark.citilink.domain;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
-@AllArgsConstructor
 @Data
-public class Product {
-    private long id;
+@AllArgsConstructor
+
+public class ProductUpdate {
     private String name;
     private int price;
-    private boolean removed;
 }

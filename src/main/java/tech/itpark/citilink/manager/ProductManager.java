@@ -1,8 +1,6 @@
 package tech.itpark.citilink.manager;
 
 import tech.itpark.citilink.domain.*;
-import tech.itpark.citilink.repository.ProductRepository;
-import tech.itpark.citilink.repository.ProductRepositoryInMemory;
 
 import java.util.ArrayList;
 
@@ -51,7 +49,6 @@ public class ProductManager {
                 }
             }
         }
-
         return result;
     }
 
@@ -80,12 +77,40 @@ public class ProductManager {
                 continue;
             }
         }
-
         return result;
     }
 
     public void add(Product product) {
         items.add(product);
+    }
+
+    public Product getById (long id) {
+        for (Product item : items) {
+            if (item.getId()== id) {
+                return item;
+            }
+        }
+        return null;
+    }
+
+    public void removeById (long id) {
+        for (Product item : items) {
+            if (item.getId() == id) {
+                item.setRemoved(true);
+                return;
+            }
+        }
+    }
+
+    public Product updateById (long id, ProductUpdate dto) {
+        for (Product item : items) {
+            if (item.getId() == id) {
+                item.setName(dto.getName());
+                item.setPrice(dto.getPrice());
+                return item;
+            }
+        }
+        return null;
     }
 
     private boolean contains(String field, String target) {

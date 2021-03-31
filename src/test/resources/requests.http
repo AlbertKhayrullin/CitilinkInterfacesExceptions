@@ -6,7 +6,7 @@ POST http://localhost:8080/products/caps
 Content-Type: application/json
 
 {
-  "id": 0,
+  "id": 1,
   "name": "Red Cap",
   "price": 500,
   "color": "red",
@@ -19,7 +19,7 @@ POST http://localhost:8080/products/books
 Content-Type: application/json
 
 {
-  "id": 0,
+  "id": 2,
   "name": "Anna Karenina",
   "price": 900,
   "author": "Tolstoy"
@@ -31,7 +31,7 @@ POST http://localhost:8080/products/iPhones
 Content-Type: application/json
 
 {
-  "id": 0,
+  "id": 3,
   "name": "Apple IPhone SE",
   "price": 60000,
   "memory": 256,
@@ -45,9 +45,22 @@ POST http://localhost:8080/products/laptops
 Content-Type: application/json
 
 {
-  "id": 0,
+  "id": 4,
   "name": "Laptop ASUS",
   "price": 50000,
+  "model": "VivoBook",
+  "processor": "intel CORE i5"
+}
+
+###
+
+POST http://localhost:8080/products/laptops
+Content-Type: application/json
+
+{
+  "id": 5,
+  "name": "Laptop ASUS",
+  "price": 1,
   "model": "VivoBook",
   "processor": "intel CORE i5"
 }
@@ -86,7 +99,29 @@ GET http://localhost:8080/products/catalog/laptops
 
 ###
 
+DELETE http://localhost:8080/products/5
 
+###
+
+PUT http://localhost:8080/products/2
+Content-Type: application/json
+
+{
+  "name": "War and Peace",
+  "price": 1000
+}
+
+###
+
+PUT http://localhost:8080/products/3
+Content-Type: application/json
+
+{
+  "name": "Apple IPhone XP",
+  "price": 70000
+}
+
+###
 
 
 
