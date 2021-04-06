@@ -1,12 +1,11 @@
 package tech.itpark.citilink.repository;
 
 import tech.itpark.citilink.domain.Product;
-
-import java.util.ArrayList;
+import java.util.List;
 
 public class ProductRepositoryInFile implements ProductRepository {
     @Override
-    public ArrayList<Product> getAll() {
+    public List<Product> getAll() {
         // TODO: читать из файла
         return null;
     }

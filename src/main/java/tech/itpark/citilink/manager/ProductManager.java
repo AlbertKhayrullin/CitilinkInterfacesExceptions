@@ -1,20 +1,21 @@
 package tech.itpark.citilink.manager;
 
+import tech.itpark.citilink.handler.IdNotFound;
 import tech.itpark.citilink.domain.*;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class ProductManager {
-    // private ProductRepository repository = new ProductRepositoryInMemory();
-    private ArrayList<Product> items = new ArrayList<>();
 
-    public ArrayList<Product> getAll() {
+    private List<Product> items = new ArrayList<>();
+
+    public List<Product> getAll() {
         return items;
     }
 
-    // выделить + Ctrl + Shift + стрелки вверх/вниз
-    public ArrayList<Product> search(String text) {
-        ArrayList<Product> result = new ArrayList<>();
+    public List<Product> search(String text) {
+        List<Product> result = new ArrayList<>();
         String target = text.trim().toLowerCase();
 
         for (Product item : items) {
@@ -52,10 +53,9 @@ public class ProductManager {
         return result;
     }
 
-    public ArrayList<Product> filter(String type) {
-        ArrayList<Product> result = new ArrayList<>();
+    public List<Product> filter(String type) {
+        List<Product> result = new ArrayList<>();
 
-        // && - логическое И
         for (Product item : items) {
             if (type.equals("caps") && item instanceof Cap) {
                 result.add(item);
@@ -86,11 +86,11 @@ public class ProductManager {
 
     public Product getById (long id) {
         for (Product item : items) {
-            if (item.getId()== id) {
+            if (item.getId() == id) {
                 return item;
             }
         }
-        return null;
+        throw new IdNotFound();
     }
 
     public void removeById (long id) {
@@ -100,6 +100,7 @@ public class ProductManager {
                 return;
             }
         }
+        throw new IdNotFound();
     }
 
     public Product updateById (long id, ProductUpdate dto) {
@@ -110,7 +111,7 @@ public class ProductManager {
                 return item;
             }
         }
-        return null;
+        throw new IdNotFound();
     }
 
     private boolean contains(String field, String target) {

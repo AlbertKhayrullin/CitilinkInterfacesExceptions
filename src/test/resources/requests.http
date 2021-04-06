@@ -1,6 +1,3 @@
-GET http://localhost:8080/products
-
-###
 
 POST http://localhost:8080/products/caps
 Content-Type: application/json
@@ -67,6 +64,14 @@ Content-Type: application/json
 
 ###
 
+GET http://localhost:8080/products
+
+###
+
+GET http://localhost:8080/products/7
+
+###
+
 GET http://localhost:8080/products/search?text=anna
 
 ###
@@ -99,10 +104,6 @@ GET http://localhost:8080/products/catalog/laptops
 
 ###
 
-DELETE http://localhost:8080/products/5
-
-###
-
 PUT http://localhost:8080/products/2
 Content-Type: application/json
 
@@ -123,7 +124,23 @@ Content-Type: application/json
 
 ###
 
+PUT http://localhost:8080/products/7
+Content-Type: application/json
 
+{
+  "name": "Automobile Volvo",
+  "price": 7000000
+}
+
+###
+
+DELETE http://localhost:8080/products/5
+
+###
+
+DELETE http://localhost:8080/products/6
+
+###
 
 
 
