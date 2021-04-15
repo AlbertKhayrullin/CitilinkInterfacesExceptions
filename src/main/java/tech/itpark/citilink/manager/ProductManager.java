@@ -1,6 +1,6 @@
 package tech.itpark.citilink.manager;
 
-import tech.itpark.citilink.handler.IdNotFound;
+import tech.itpark.citilink.exception.IdNotFoundException;
 import tech.itpark.citilink.domain.*;
 
 import java.util.ArrayList;
@@ -90,7 +90,7 @@ public class ProductManager {
                 return item;
             }
         }
-        throw new IdNotFound();
+        throw new IdNotFoundException();
     }
 
     public void removeById (long id) {
@@ -100,7 +100,7 @@ public class ProductManager {
                 return;
             }
         }
-        throw new IdNotFound();
+        throw new IdNotFoundException();
     }
 
     public Product updateById (long id, ProductUpdate dto) {
@@ -111,7 +111,7 @@ public class ProductManager {
                 return item;
             }
         }
-        throw new IdNotFound();
+        throw new IdNotFoundException();
     }
 
     private boolean contains(String field, String target) {
